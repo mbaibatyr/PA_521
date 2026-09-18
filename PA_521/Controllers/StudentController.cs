@@ -19,5 +19,11 @@ namespace PA_521.Controllers
         {
             return Ok(service.GetConcat(a, b));
         }
+
+        [HttpGet("GetSum/{a}/{b}")]
+        public ActionResult GetSum(int a, int b)
+        {
+            return Ok(service.GetSum(a, b));
+        }
     }
 }
