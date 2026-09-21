@@ -10,7 +10,8 @@ namespace PA_521
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddScoped<IStudent, StudentService>();
+            builder.Services.AddScoped<IStudent, WorkService>();
+            builder.Services.AddScoped<ICity, CityService>();
 
             builder.Services.AddControllers();
             

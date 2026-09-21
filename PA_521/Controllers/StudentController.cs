@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PA_521.Abstract;
+using PA_521.Model;
+using System.Reflection;
 
 namespace PA_521.Controllers
 {
@@ -24,6 +26,30 @@ namespace PA_521.Controllers
         public ActionResult GetSum(int a, int b)
         {
             return Ok(service.GetSum(a, b));
+        }
+
+        [HttpPost("PostConcat")]
+        public ActionResult PostConcat(PostConcatModel model)
+        {
+            return Ok(service.GetConcat(model.a, model.b));
+        }
+
+        [HttpPost("PostGetConcat/{id}")]
+        public ActionResult PostGetConcat(PostConcatModel model, string id)
+        {
+            return Ok(service.GetConcat(model.a, model.b + id));
+        }
+
+        [HttpPut("PutConcat")]
+        public ActionResult PutConcat(PostConcatModel model)
+        {
+            return Ok(service.GetConcat(model.a, model.b));
+        }
+
+        [HttpDelete("DeleteConcat/{id}")]
+        public ActionResult DeleteConcat(string id)
+        {
+            return Ok(service.GetConcat(id, id));
         }
     }
 }
