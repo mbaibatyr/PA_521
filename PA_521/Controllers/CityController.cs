@@ -30,3 +30,25 @@ namespace PA_521.Controllers
         }        
     }
 }
+
+
+/*
+ sql
+
+alter proc CityDelete
+@id int
+as
+delete from city
+where id = @id
+
+
+select *
+from city
+
+insert into city (name, [year], population)
+values ('test', 2026, 1000)
+
+exec CityDelete 4
+
+ 
+ */
