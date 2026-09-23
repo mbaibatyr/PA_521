@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using PA_521.Abstract;
 using PA_521.Model;
+using PA_521.Service;
 
 namespace PA_521.Controllers
 {
@@ -21,5 +22,11 @@ namespace PA_521.Controllers
         {
             return Ok(service.CityGetAll());
         }
+
+        [HttpDelete("CityDelete/{id}")]
+        public ActionResult CityDelete(int id)
+        {            
+            return Ok(service.CityDelete(id));
+        }        
     }
 }

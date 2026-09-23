@@ -14,12 +14,27 @@ namespace PA_521.Service
         }
         public string CityAdd(CityDTO city)
         {
-            throw new NotImplementedException();
+            using (SqlConnection db = new SqlConnection(config["db"]))
+            {
+                //DynamicParameters p = new DynamicParameters(city);
+                //int rows = db.Execute("CityInsert", p,
+                //    commandType: System.Data.CommandType.StoredProcedure);
+                //    
+                int rows = db.Execute("CityInsert", new { p_name=city.name, 
+                    p_id = city.id } ,
+                    commandType: System.Data.CommandType.StoredProcedure);
+                return rows.ToString();
+            }
         }
 
         public string CityDelete(int id)
-        {
-            throw new NotImplementedException();
+        {            
+            using (SqlConnection db = new SqlConnection(config["db"]))
+            {
+                int rows = db.Execute("CityDelete", new { id }, 
+                    commandType: System.Data.CommandType.StoredProcedure);
+                return rows.ToString();
+            }
         }
 
         public string CityEdit(CityDTO city, int id)
