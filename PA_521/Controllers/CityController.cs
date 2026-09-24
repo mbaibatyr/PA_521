@@ -18,13 +18,13 @@ namespace PA_521.Controllers
         {
             this.service = service;
             _mapper = mapper;
-            var model1 = new Model1
-            {
-                a = "value A",
-                b = "value B"
-            };
+            //var model1 = new Model1
+            //{
+            //    a = "value A",
+            //    b = "value B"
+            //};
 
-            var model2 = _mapper.Map<Model2>(model1);
+            //var model2 = _mapper.Map<Model2>(model1);
         }
 
         [HttpGet("CityGetAll")]
