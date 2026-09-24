@@ -1,5 +1,7 @@
 
+using Microsoft.Extensions.DependencyInjection;
 using PA_521.Abstract;
+using PA_521.Model;
 using PA_521.Service;
 
 namespace PA_521
@@ -9,6 +11,11 @@ namespace PA_521
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<MappingProfile>();
+            });
 
             builder.Services.AddScoped<IStudent, WorkService>();
             builder.Services.AddScoped<ICity, CityService>();
@@ -32,6 +39,8 @@ namespace PA_521
 
 
             app.MapControllers();
+
+
 
             app.Run();
         }

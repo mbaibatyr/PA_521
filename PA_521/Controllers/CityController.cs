@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using PA_521.Abstract;
@@ -12,9 +13,18 @@ namespace PA_521.Controllers
     public class CityController : ControllerBase
     {
         ICity service;
-        public CityController(ICity service)
+        private readonly IMapper _mapper;
+        public CityController(ICity service, IMapper mapper)
         {
             this.service = service;
+            _mapper = mapper;
+            var model1 = new Model1
+            {
+                a = "value A",
+                b = "value B"
+            };
+
+            var model2 = _mapper.Map<Model2>(model1);
         }
 
         [HttpGet("CityGetAll")]
@@ -27,7 +37,21 @@ namespace PA_521.Controllers
         public ActionResult CityDelete(int id)
         {            
             return Ok(service.CityDelete(id));
-        }        
+        }
+
+        [HttpGet("Test")]
+        public IActionResult Test()
+        {
+            var model1 = new Model1
+            {
+                a = "AAA",
+                b = "BBB"
+            };
+
+            var model2 = _mapper.Map<Model2>(model1);
+
+            return Ok(model2);
+        }
     }
 }
 
