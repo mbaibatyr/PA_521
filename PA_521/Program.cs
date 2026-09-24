@@ -15,6 +15,7 @@ namespace PA_521
             builder.Services.AddAutoMapper(cfg =>
             {
                 cfg.AddProfile<MappingProfile>();
+                cfg.AddProfile<MappingProfile2>();
             });
 
             builder.Services.AddScoped<IStudent, WorkService>();

@@ -5,6 +5,7 @@ using Microsoft.Data.SqlClient;
 using PA_521.Abstract;
 using PA_521.Model;
 using PA_521.Service;
+using System.Reflection;
 
 namespace PA_521.Controllers
 {
@@ -51,6 +52,19 @@ namespace PA_521.Controllers
             var model2 = _mapper.Map<Model2>(model1);
 
             return Ok(model2);
+        }
+
+        [HttpGet("Test2")]
+        public IActionResult Test2()
+        {
+            var model3 = new Model3
+            {
+                a = "Иван",
+                b = "Описание"
+            };
+
+            var model4 = _mapper.Map<Model4>(model3);
+            return Ok(model4);
         }
     }
 }
