@@ -16,5 +16,19 @@ namespace MyConsole.Service
             using var db = new MyContext();
             return db.City.ToList();
         }
+
+        public City CityGetById(int id)
+        {
+            using var db = new MyContext();
+            return db.City.Find(id);
+        }
+
+        public string CityIns(City city)
+        {
+            using var db = new MyContext();
+            db.City.Add(city);
+            db.SaveChanges();
+            return "added";
+        }
     }
 }

@@ -11,12 +11,26 @@ namespace MyConsole
         static void Main(string[] args)
         {
             CityService cityService = new CityService();
+            //var data = cityService.CityGetAll();
+            //foreach (City item in data)
+            //{
+            //    Console.WriteLine($"{item.id} - {item.name} - {item.population}");
+            //}
+
+            //var item = cityService.CityGetById(1);
+            //if(item != null)
+            //    Console.WriteLine($"{item.id} - {item.name} - {item.population}");
+            //else
+            //    Console.WriteLine($"данные не найдены");
+
+            var item2 = cityService.CityIns(new City { name = "Шымкент", population = 1500000, year = 1990});
+            Console.WriteLine(item2);
+
             var data = cityService.CityGetAll();
             foreach (City item in data)
             {
                 Console.WriteLine($"{item.id} - {item.name} - {item.population}");
             }
-
 
             //var dt = MyTable.GetDataTable();
             //foreach (DataRow item in dt.Rows)
@@ -30,7 +44,7 @@ namespace MyConsole
             //    Console.WriteLine($"{item.id} - {item.name}");
             //}
 
-            
+
         }
     }
 }

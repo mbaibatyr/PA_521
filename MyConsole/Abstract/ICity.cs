@@ -10,5 +10,7 @@ namespace MyConsole.Abstract
     public interface ICity
     {
         IEnumerable<City> CityGetAll();
+        City CityGetById(int id);
+        string CityIns(City city);
     }
 }
