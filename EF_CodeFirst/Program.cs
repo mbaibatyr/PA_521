@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MyDbContext db = new MyDbContext();
+            foreach (var item in db.Country.ToList())
+            {
+                Console.WriteLine($"{item.Id} - {item.Name}" );
+            }
+            
         }
     }
 }
