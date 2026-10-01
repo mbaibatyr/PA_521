@@ -26,12 +26,55 @@ namespace MySwagger.Controllers
         [HttpGet, Route("Get_1")]
         [MapToApiVersion("1.0")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         public ActionResult Get_1(int a, int b)
         {
             if (a <= 0 || b <= 0)
-                return BadRequest("Одно из чисел меньше или равно нулю");
+            {
+                var error = new ErrorResponse
+                {
+                    ErrorCode = "INCORRECT_DATA_IN",
+                    Message = "Одно из чисел меньше или равно нулю",
+                    Timestamp = DateTime.UtcNow
+                };
+                return BadRequest(error);                
+            }
+            return Ok(a + b);
+        }
+
+
+
+        /// <summary>
+        /// метод сложения двух параметров
+        /// </summary>
+        /// <param name="a">Первое число</param>
+        /// <param name="b">Второе число</param>
+        /// <remarks>
+        /// Возвращает базовый массив товаров версии 1.0. 
+        /// Обратите внимание, что этот метод устаревает, рекомендуется использовать версию 2.0.
+        /// </remarks>
+        /// <response code="200">Успешно возвращен список продуктов</response>
+        /// <response code="400">Ошибка в параметрах запроса</response>        
+        [HttpGet, Route("Get_2")]
+        [MapToApiVersion("2.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+        public ActionResult Get_2(int a, int b)
+        {
+            if (a <= 0 || b <= 0)
+            {
+                var error = new ErrorResponse
+                {
+                    ErrorCode = "INCORRECT_DATA_IN",
+                    Message = "Одно из чисел меньше или равно нулю",
+                    Timestamp = DateTime.UtcNow
+                };
+                return BadRequest(error);
+            }
             return Ok(a + b);
         }
     }
