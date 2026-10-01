@@ -60,6 +60,7 @@ namespace MySwagger.Controllers
         }
         [Tags("Группа 1_1 (Управление группами)")]
         [HttpGet, Route("Get_1_3")]
+        //[ApiExplorerSettings(IgnoreApi = true)]
         public ActionResult Get_1_3(int a, int b)
         {
             return Ok(a * b);
