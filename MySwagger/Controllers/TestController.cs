@@ -13,7 +13,7 @@ namespace MySwagger.Controllers
     {
 
         /// <summary>
-        /// Получить список всех доступных продуктов.
+        /// метод сложения двух параметров
         /// </summary>
         /// <param name="a">Первое число</param>
         /// <param name="b">Второе число</param>
@@ -30,6 +30,8 @@ namespace MySwagger.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         public ActionResult Get_1(int a, int b)
         {
+            if (a <= 0 || b <= 0)
+                return BadRequest("Одно из чисел меньше или равно нулю");
             return Ok(a + b);
         }
     }
