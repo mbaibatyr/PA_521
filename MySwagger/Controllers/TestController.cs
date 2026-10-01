@@ -8,7 +8,7 @@ namespace MySwagger.Controllers
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/my_test")]
-    [Tags("Группа 1 (Управление товарами)")]    
+    //[Tags("Группа 1 (Управление товарами)")]    
     public class TestController : ControllerBase
     {
 
@@ -29,6 +29,7 @@ namespace MySwagger.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+        [Tags("Группа 1 (Управление группами)")]
         //[ApiExplorerSettings(IgnoreApi = true)]
         public ActionResult Get_1(int a, int b)
         {
@@ -43,6 +44,25 @@ namespace MySwagger.Controllers
                 return BadRequest(error);                
             }
             return Ok(a + b);
+        }
+
+        [Tags("Группа 1_1 (Управление группами)")]
+        [HttpGet, Route("Get_1_1")]
+        public ActionResult Get_1_1(int a, int b)
+        {
+            return Ok(a * b);
+        }
+        [Tags("Группа 1_1 (Управление группами)")]
+        [HttpGet, Route("Get_1_2")]
+        public ActionResult Get_1_2(int a, int b)
+        {
+            return Ok(a * b);
+        }
+        [Tags("Группа 1_1 (Управление группами)")]
+        [HttpGet, Route("Get_1_3")]
+        public ActionResult Get_1_3(int a, int b)
+        {
+            return Ok(a * b);
         }
 
 
