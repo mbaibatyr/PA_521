@@ -14,7 +14,7 @@ namespace PA_521.Service
         }
         public string CityAdd(CityDTO city)
         {
-            using (SqlConnection db = new SqlConnection(config["db"]))
+            using (SqlConnection db = new SqlConnection(config["db_sql_server"]))
             {
                 //DynamicParameters p = new DynamicParameters(city);
                 //int rows = db.Execute("CityInsert", p,
