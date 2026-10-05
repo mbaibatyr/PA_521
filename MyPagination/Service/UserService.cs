@@ -27,7 +27,7 @@ namespace MyPagination.Service
                 commandType: CommandType.StoredProcedure
             )).ToList();
 
-            var totalCount = (int?)data.FirstOrDefault()?.total_count ?? 0;
+            var totalCount = (int?)data.FirstOrDefault()?.TotalCount ?? 0;
 
             return new PagedResult<User>
             {
