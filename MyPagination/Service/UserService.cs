@@ -21,20 +21,20 @@ namespace MyPagination.Service
             parameters.Add("@PageNumber", page);
             parameters.Add("@PageSize", pageSize);
 
-            var data = (await db.QueryAsync<dynamic>(
+            var data = (await db.QueryAsync<User>(
                 "GetUsers",
                 parameters,
                 commandType: CommandType.StoredProcedure
             )).ToList();
 
-            var totalCount = data.FirstOrDefault()?.TotalCount ?? 0;
+            var totalCount = (int?)data.FirstOrDefault()?.total_count ?? 0;
 
             return new PagedResult<User>
             {
                 Items = data
                     .Select(x => new User
                     {
-                        id = x.Id,
+                        id = x.id,
                         last_name = x.last_name,
                         first_name = x.first_name,
                         date_birth = x.date_birth,
