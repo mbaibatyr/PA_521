@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_CodeFirst", "EF_CodeFirs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySwagger", "MySwagger\MySwagger.csproj", "{7371EB05-1CBF-4700-88AD-BB7C16BC1F5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPagination", "MyPagination\MyPagination.csproj", "{7A451508-594D-45FF-BC2D-A28B5609C066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7371EB05-1CBF-4700-88AD-BB7C16BC1F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7371EB05-1CBF-4700-88AD-BB7C16BC1F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7371EB05-1CBF-4700-88AD-BB7C16BC1F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A451508-594D-45FF-BC2D-A28B5609C066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A451508-594D-45FF-BC2D-A28B5609C066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A451508-594D-45FF-BC2D-A28B5609C066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A451508-594D-45FF-BC2D-A28B5609C066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
