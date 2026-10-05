@@ -15,7 +15,7 @@ namespace MyPagination.Controllers
             this.service = service;
         }
         [HttpGet, Route("GetUsers")]
-        public async Task<ActionResult> GetUsersAsync(int page, int pageSize)
+        public async Task<ActionResult> GetUsersAsync(int page = 1, int pageSize = 20)
         {
             var result =  await service.GetUsersAsync(page, pageSize);
             return Ok(result);
