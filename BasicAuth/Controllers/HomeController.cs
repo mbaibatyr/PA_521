@@ -6,11 +6,33 @@ namespace BasicAuth.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class HomeController : ControllerBase
     {
-        [HttpGet, Route("SayHello")]
-        public ActionResult SayHello(string name = "World")
+        [HttpGet, Route("SayHelloAdmin")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult SayHelloAdmin(string name = "World")
+        {
+            return Ok($"Hello {name}!");
+        }
+
+        [HttpGet, Route("SayHelloUser")]
+        [Authorize(Roles = "User")]
+        public ActionResult SayHelloUser(string name = "World")
+        {
+            return Ok($"Hello {name}!");
+        }
+
+        [HttpGet, Route("SayHelloAll")]
+        [Authorize]
+        public ActionResult SayHelloAll(string name = "World")
+        {
+            return Ok($"Hello {name}!");
+        }
+
+        [HttpGet, Route("SayHelloAnonymous")]
+        [AllowAnonymous]
+        public ActionResult SayHelloAnonymous(string name = "World")
         {
             return Ok($"Hello {name}!");
         }
