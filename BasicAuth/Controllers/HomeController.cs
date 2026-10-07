@@ -38,3 +38,46 @@ namespace BasicAuth.Controllers
         }
     }
 }
+
+
+/*
+ create table [User]
+(
+	id int primary key identity,
+	login varchar(200),
+	psw nvarchar(200)
+)
+
+insert into [User] (login, psw)
+values ('admin', 'admin'),
+('user', 'user'),
+('audit', 'audit')
+
+
+create table [Role]
+(
+	id int primary key identity,
+	name varchar(200)
+)
+
+insert into [Role] (name)
+values ('ADMIN'),
+('USER'),
+('AUDIT')
+
+create table User_Role
+(
+	[user_id] int,
+	[role_id] int
+)
+
+insert into User_Role ([user_id], [role_id])
+values (3,3)
+
+
+select r.name from [user] u 
+join user_role ur on u.id = ur.[user_id]
+join role r on r.id = ur.role_id
+where u.login = 'audit' and u.psw = 'audit'
+ 
+ */
