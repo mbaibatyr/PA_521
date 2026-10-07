@@ -81,5 +81,5 @@ namespace BasicAuth.Handlers
             }
         }
     }
-    }
 }
+
