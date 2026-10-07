@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
+using Dapper;
 
 namespace BasicAuth.Handlers
 {
@@ -42,7 +44,14 @@ namespace BasicAuth.Handlers
                 var username = credentials[0];
                 var password = credentials[1];
 
-                string[] roles;
+                IEnumerable<string> roles;
+                using (SqlConnection db = new SqlConnection(""))
+                {
+                    roles = db.Query<string>("select r.name from user u " +
+                                            "join user_role ur on u.id = ur.user_id " +
+                                            "join role r on r.id = ur.role_id " +
+                                            $"where u.login = {username} and u.psw = {password} ");
+                }
                 if (username == "admin" && password == "admin")
                 {
                     roles = new[] { "Admin", "User" }; // Администратор имеет обе роли
