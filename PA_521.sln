@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySwagger", "MySwagger\MySw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPagination", "MyPagination\MyPagination.csproj", "{7A451508-594D-45FF-BC2D-A28B5609C066}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuth", "BasicAuth\BasicAuth.csproj", "{C3277B7F-C5D2-4407-979C-CA93F139B9D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7A451508-594D-45FF-BC2D-A28B5609C066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A451508-594D-45FF-BC2D-A28B5609C066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A451508-594D-45FF-BC2D-A28B5609C066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
