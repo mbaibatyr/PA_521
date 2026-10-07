@@ -45,12 +45,12 @@ namespace BasicAuth.Handlers
                 var password = credentials[1];
 
                 IEnumerable<string> roles;
-                using (SqlConnection db = new SqlConnection(""))
+                using (SqlConnection db = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\байбатыровм\\Documents\\mydb.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"))
                 {
-                    roles = db.Query<string>("select r.name from user u " +
+                    roles = db.Query<string>("select r.name from [user] u " +
                                             "join user_role ur on u.id = ur.user_id " +
-                                            "join role r on r.id = ur.role_id " +
-                                            $"where u.login = {username} and u.psw = {password} ");
+                                            "join [role] r on r.id = ur.role_id " +
+                                            $"where u.login = '{username}' and u.psw = '{password}' ");
                 }
                 if (roles == null || roles.Count() == 0)
                     return AuthenticateResult.Fail("Invalid Username or Password");
