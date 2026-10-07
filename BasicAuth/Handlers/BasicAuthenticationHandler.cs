@@ -52,18 +52,20 @@ namespace BasicAuth.Handlers
                                             "join role r on r.id = ur.role_id " +
                                             $"where u.login = {username} and u.psw = {password} ");
                 }
-                if (username == "admin" && password == "admin")
-                {
-                    roles = new[] { "Admin", "User" }; // Администратор имеет обе роли
-                }
-                else if (username == "user" && password == "user")
-                {
-                    roles = new[] { "User" }; // Обычный пользователь
-                }
-                else
-                {
+                if (roles == null || roles.Count() == 0)
                     return AuthenticateResult.Fail("Invalid Username or Password");
-                }
+                //if (username == "admin" && password == "admin")
+                //{
+                //    roles = new[] { "Admin", "User" }; // Администратор имеет обе роли
+                //}
+                //else if (username == "user" && password == "user")
+                //{
+                //    roles = new[] { "User" }; // Обычный пользователь
+                //}
+                //else
+                //{
+                //    return AuthenticateResult.Fail("Invalid Username or Password");
+                //}
 
                 var claims = new List<Claim>
                 {
