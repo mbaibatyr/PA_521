@@ -99,5 +99,19 @@ namespace MyFile.Controllers
                 Path = filePath
             });
         }
+
+        [HttpGet("DownloadTXT")]
+        public IActionResult DownloadTxt()
+        {
+            string text = "Привет!\r\nЭто динамический TXT-файл.";
+
+            var bytes = System.Text.Encoding.UTF8.GetBytes(text);
+
+            return File(
+                bytes,
+                "text/plain",
+                "result.txt"
+            );
+        }
     }
 }
