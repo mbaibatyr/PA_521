@@ -10,14 +10,14 @@ namespace BasicAuth.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet, Route("SayHelloAdmin")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult SayHelloAdmin(string name = "World")
         {
             return Ok($"Hello {name}!");
         }
 
         [HttpGet, Route("SayHelloUser")]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "USER")]
         public ActionResult SayHelloUser(string name = "World")
         {
             return Ok($"Hello {name}!");

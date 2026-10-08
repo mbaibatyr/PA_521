@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPagination", "MyPaginatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuth", "BasicAuth\BasicAuth.csproj", "{C3277B7F-C5D2-4407-979C-CA93F139B9D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFile", "MyFile\MyFile.csproj", "{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3277B7F-C5D2-4407-979C-CA93F139B9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
