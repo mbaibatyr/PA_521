@@ -70,5 +70,34 @@ namespace MyFile.Controllers
 
             return Ok(uploadedFiles);
         }
+
+        [HttpPost("UploadXLSX")]
+        public async Task<IActionResult> UploadXLSX(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("Файл не выбран");
+
+            var extension = Path.GetExtension(file.FileName);
+
+            if (!extension.Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+                return BadRequest("Можно загрузить только Excel-файл (.xlsx)");
+
+            var folder = Path.Combine(AppContext.BaseDirectory, "Files");
+
+            Directory.CreateDirectory(folder);
+
+            var fileName = $"{Guid.NewGuid()}{extension}";
+
+            var filePath = Path.Combine(folder, fileName);
+
+            await using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            return Ok(new
+            {
+                FileName = fileName,
+                Path = filePath
+            });
+        }
     }
 }
