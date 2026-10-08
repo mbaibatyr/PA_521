@@ -113,5 +113,41 @@ namespace MyFile.Controllers
                 "result.txt"
             );
         }
+
+        [HttpGet("DownloadFile")]
+        public IActionResult DownloadFile(string fileName)
+        {
+            var folder = Path.Combine(AppContext.BaseDirectory, "Files");
+
+            var filePath = Path.Combine(folder, fileName);
+
+            if (!System.IO.File.Exists(filePath))
+                return NotFound("Файл не найден");
+
+            var contentType = Path.GetExtension(fileName).ToLowerInvariant() switch
+            {
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".xls" => "application/vnd.ms-excel",
+
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".doc" => "application/msword",
+
+                ".pdf" => "application/pdf",
+
+                ".txt" => "text/plain",
+
+                ".csv" => "text/csv",
+
+                ".zip" => "application/zip",
+
+                _ => "application/octet-stream"
+            };
+
+            return PhysicalFile(
+                filePath,
+                contentType,
+                fileName
+            );
+        }
     }
 }
