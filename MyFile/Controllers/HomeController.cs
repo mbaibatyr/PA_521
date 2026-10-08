@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace MyFile.Controllers
 {
@@ -117,6 +118,15 @@ namespace MyFile.Controllers
         [HttpGet("DownloadFile")]
         public IActionResult DownloadFile(string fileName)
         {
+            //StringBuilder sb = new StringBuilder();
+            //string st = null;
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    sb.AppendLine("qeqqe");
+            //    st += "qeqqe";
+            //}
+            //sb.ToString();
+
             var folder = Path.Combine(AppContext.BaseDirectory, "Files");
 
             var filePath = Path.Combine(folder, fileName);
