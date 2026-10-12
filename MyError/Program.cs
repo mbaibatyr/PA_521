@@ -18,13 +18,18 @@ namespace MyError
                 options.Filters.AddService<FluentValidationFilter>();
             });
 
-            builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+            //builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddProblemDetails();
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+
             var app = builder.Build();
 
+            app.UseExceptionHandler();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
