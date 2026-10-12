@@ -18,7 +18,7 @@ namespace MyError.Model
                 .NotEmpty()
                 .WithMessage("Имя обязательно")
                 .MaximumLength(100)
-                .WithMessage("Имя не должно превышать 100 символов");
+                .WithMessage("Имя не должно превышать 100 символов");                
 
             RuleFor(x => x.Email)
                 .NotEmpty()

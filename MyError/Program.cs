@@ -1,4 +1,7 @@
 
+using FluentValidation;
+using MyError.Model;
+
 namespace MyError
 {
     public class Program
@@ -10,7 +13,8 @@ namespace MyError
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
