@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyError.Model;
+using System.Threading;
 
 namespace MyError.Controllers
 {
@@ -9,20 +10,41 @@ namespace MyError.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //private readonly IValidator<User> _validator;
+        private readonly IValidator<User> _validator;
 
-        //public UserController(IValidator<User> validator)
-        //{
-        //    _validator = validator;
-        //}
+        public UserController(IValidator<User> validator)
+        {
+            _validator = validator;
+        }
 
         [HttpPost("UserAdd")]
-        public ActionResult UserAdd(User user)
+        public async Task<ActionResult> UserAddAsync(User user, CancellationToken cancellationToken)
         {
-            /*
-             обращение в БД по созданию
-             */
-            return Created("", user);
+            var result = await _validator.ValidateAsync(user, cancellationToken);
+
+            if (!result.IsValid)
+            {
+                var errors = result.Errors
+                    .GroupBy(x => x.PropertyName)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Select(x => x.ErrorMessage).ToArray());
+
+                return BadRequest(new ValidationProblemDetails
+                {
+                    Errors = errors,
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "Ошибка валидации"
+                });
+            }
+
+            // Здесь сохранение пользователя в БД.
+
+            return StatusCode(201, new
+            {
+                message = "Пользователь создан"
+            });
+
         }
     }
 }
