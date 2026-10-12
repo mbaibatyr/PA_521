@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuth", "BasicAuth\Basi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFile", "MyFile\MyFile.csproj", "{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyError", "MyError\MyError.csproj", "{7DA5511D-4924-4DFA-95A9-F7ACF4DBD039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFC48E9D-CA18-4F61-9866-2E511BDB0B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA5511D-4924-4DFA-95A9-F7ACF4DBD039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA5511D-4924-4DFA-95A9-F7ACF4DBD039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA5511D-4924-4DFA-95A9-F7ACF4DBD039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA5511D-4924-4DFA-95A9-F7ACF4DBD039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
