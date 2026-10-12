@@ -1,5 +1,6 @@
 
 using FluentValidation;
+using MyError.Filter;
 using MyError.Model;
 
 namespace MyError
@@ -10,9 +11,13 @@ namespace MyError
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddScoped<FluentValidationFilter>();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.AddService<FluentValidationFilter>();
+            });
+
             builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
 
             builder.Services.AddEndpointsApiExplorer();
