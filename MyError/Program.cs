@@ -38,8 +38,6 @@ namespace MyError
             }
 
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();

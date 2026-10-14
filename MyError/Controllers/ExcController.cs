@@ -12,5 +12,11 @@ namespace MyError.Controllers
         {
             return Ok(DateTime.Parse(date));
         }
+
+        [HttpGet("DivideZero")]
+        public ActionResult DivideZero(int a)
+        {
+            return Ok(10 / a);
+        }
     }
 }
