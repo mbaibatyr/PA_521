@@ -22,8 +22,7 @@ public class AuthController : ControllerBase
     [AllowAnonymous]
     [HttpPost("token")]
     public IActionResult Token([FromBody] LoginRequest request)
-    {
-        // Демонстрация. В production проверяй пользователя в БД
+    {        
         if (request.Login != "admin" ||
             request.Password != "123456")
         {
@@ -42,7 +41,8 @@ public class AuthController : ControllerBase
         {
             new Claim(ClaimTypes.NameIdentifier, "1"),
             new Claim(ClaimTypes.Name, request.Login),
-            new Claim(ClaimTypes.Role, "Admin")
+            new Claim(ClaimTypes.Role, "Admin"),
+            new Claim("Dep", "IT")
         };
 
         var token = new JwtSecurityToken(

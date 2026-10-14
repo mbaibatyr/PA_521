@@ -17,7 +17,8 @@ namespace MyJWT.Controllers
                 Message = "Авторизация успешна",
                 UserId = User.FindFirst(
                     System.Security.Claims.ClaimTypes.NameIdentifier)?.Value,
-                Login = User.Identity?.Name
+                Login = User.Identity?.Name,
+                DepartmentId = User.FindFirst("Dep")?.Value,
             });
         }
     }
