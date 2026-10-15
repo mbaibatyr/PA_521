@@ -14,8 +14,9 @@ namespace MyXUnit
             int a = 2;
             int b = 3;
             int expected = 5;
-            var result = test.GetSum(a, b);
-            Assert.Equal(expected, result);
+            var fact = test.GetSum(a, b);
+            Assert.Equal(expected, fact);
+            Assert.True(expected == fact);            
         }
     }
 }
