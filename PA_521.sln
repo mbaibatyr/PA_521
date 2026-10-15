@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyJWT", "MyJWT\MyJWT.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyXUnit", "MyXUnit\MyXUnit.csproj", "{1ED71D5E-AF36-4DA4-8A1A-7D2F8CB46CE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTest", "MyTest\MyTest.csproj", "{BFD1F8C8-74F5-4EEC-8FB0-4FBE67809D89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{1ED71D5E-AF36-4DA4-8A1A-7D2F8CB46CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED71D5E-AF36-4DA4-8A1A-7D2F8CB46CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED71D5E-AF36-4DA4-8A1A-7D2F8CB46CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD1F8C8-74F5-4EEC-8FB0-4FBE67809D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD1F8C8-74F5-4EEC-8FB0-4FBE67809D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD1F8C8-74F5-4EEC-8FB0-4FBE67809D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD1F8C8-74F5-4EEC-8FB0-4FBE67809D89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
