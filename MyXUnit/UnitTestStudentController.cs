@@ -32,7 +32,6 @@ namespace MyXUnit
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
             var actualStudent = Assert.IsType<Student>(okResult.Value);
-
             Assert.Equal("Иван", actualStudent.Name);
         }
     }
