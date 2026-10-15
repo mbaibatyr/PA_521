@@ -1,4 +1,9 @@
 
+using Microsoft.Data.SqlClient;
+using MyTest.Abstract;
+using MyTest.Service;
+using System.Data;
+
 namespace MyTest
 {
     public class Program
@@ -7,7 +12,9 @@ namespace MyTest
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            string connectionString = builder.Configuration.GetConnectionString("db")!;
+            builder.Services.AddScoped<IDbConnection>(_ => new SqlConnection(connectionString));
+            builder.Services.AddScoped<IStudent, StudentService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

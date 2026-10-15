@@ -1,4 +1,5 @@
-﻿using MyTest.Abstract;
+﻿using Dapper;
+using MyTest.Abstract;
 using MyTest.Model;
 using System.Data;
 
