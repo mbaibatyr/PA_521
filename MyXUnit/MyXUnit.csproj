@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -16,6 +16,10 @@
 	  <PackageReference Include="xunit.v3" Version="4.0.2" />
 	  <PackageReference Include="xunit.v3.assert" Version="4.0.2" />
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyTest\MyTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
