@@ -39,6 +39,7 @@ namespace MyIdent
                     options.Password.RequireDigit = true;
                     options.Password.RequireUppercase = true;
                     options.Password.RequireLowercase = true;
+                    options.Password.RequireNonAlphanumeric = false;//
                 })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddSignInManager()
