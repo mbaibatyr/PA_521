@@ -17,5 +17,13 @@ namespace MyMediatR.Controllers
             int id = await mediator.Send(command);
             return Ok(new { Id = id });
         }
+
+        [HttpGet("{id}")]
+        [EnableRateLimiting("fixed")] // Применяем лимит на создание продукта
+        public async Task<IActionResult> GetById(int id)
+        {
+            var product = await mediator.Send(new GetProductByIdQuery(id));
+            return product is not null ? Ok(product) : NotFound();
+        }
     }
 }

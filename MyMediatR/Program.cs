@@ -18,6 +18,9 @@ namespace MyMediatR
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();
             Log.Information("Запуск приложения...");
+            Log.Error("error");
+            Log.Warning("error");
+            Log.Warning("error");            
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Host.UseSerilog();
