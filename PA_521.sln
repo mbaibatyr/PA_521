@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTest", "MyTest\MyTest.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIdent", "MyIdent\MyIdent.csproj", "{F61AE33D-2F5A-43F5-BFCD-31873EAB226D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMediatR", "MyMediatR\MyMediatR.csproj", "{A5DC373A-5554-4D83-933B-0D4762DAB6F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{F61AE33D-2F5A-43F5-BFCD-31873EAB226D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F61AE33D-2F5A-43F5-BFCD-31873EAB226D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F61AE33D-2F5A-43F5-BFCD-31873EAB226D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5DC373A-5554-4D83-933B-0D4762DAB6F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DC373A-5554-4D83-933B-0D4762DAB6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DC373A-5554-4D83-933B-0D4762DAB6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DC373A-5554-4D83-933B-0D4762DAB6F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
